@@ -1,0 +1,34 @@
+{
+  "name": "Notion",
+  "version": "1.0.0",
+  "description": "Um wrapper básico do Notion usando electron",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "npx electron .",
+    "build": "electron-builder --linux"
+  },
+  "author": {
+    "name": "cesu",
+    "email": "cesux3@gmail.com"
+  },
+  "homepage": "https://github.com/cesusieh/Notion-wrapper",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "electron": "^35.4.0",
+    "electron-builder": "^26.0.12",
+    "electron-tray-window": "^1.2.7"
+  },
+  "build": {
+    "directories": { "output": "release" },
+    "linux": {
+      "target": ["pacman", "AppImage"],
+      "icon": "resources/icons/icon.png",
+      "category":"Utility"
+    },
+    "extraResources": [{
+          "from": "resources/icons/",
+          "to": "icons/"
+    }]
+  }
+}
